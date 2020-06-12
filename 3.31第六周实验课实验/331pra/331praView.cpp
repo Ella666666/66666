@@ -62,7 +62,6 @@ void CMy331praView::OnDraw(CDC* pDC)
 		return;
 	pDC->Rectangle(100, 100, 200, 200);
 	pDC->BeginPath();
-	
 	pDC->EndPath();
 	// TODO: 在此处为本机数据添加绘制代码
 }
@@ -164,7 +163,11 @@ void CMy331praView::OnChar(UINT nChar, UINT nRepCnt, UINT nFlags)
 	pt.x = m_ptr.x + sz.cx;
 	pt.y = m_ptr.y;
 	SetCaretPos(pt);
+	if (m_ptr.x> 800)
+	{
+		m_ptr.x = 0;
+		m_ptr.y += 20;
+	}
 	dc.TextOut(m_ptr.x, m_ptr.y, m_str);
-	CView::OnChar(nChar, nRepCnt, nFlags);
 	CView::OnChar(nChar, nRepCnt, nFlags);
 }
