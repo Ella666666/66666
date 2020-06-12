@@ -13,6 +13,7 @@ IMPLEMENT_DYNAMIC(MyDlg, CDialogEx)
 
 MyDlg::MyDlg(CWnd* pParent /*=NULL*/)
 	: CDialogEx(IDD_DIALOG1, pParent)
+	, name(_T(""))
 {
 
 }
@@ -24,6 +25,7 @@ MyDlg::~MyDlg()
 void MyDlg::DoDataExchange(CDataExchange* pDX)
 {
 	CDialogEx::DoDataExchange(pDX);
+	DDX_Text(pDX, IDC_EDIT1, name);
 }
 
 

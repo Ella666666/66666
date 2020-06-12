@@ -29,6 +29,8 @@ BEGIN_MESSAGE_MAP(C第八周课堂实验1View, CView)
 	ON_COMMAND(ID_FILE_PRINT_PREVIEW, &CView::OnFilePrintPreview)
 	ON_WM_LBUTTONDBLCLK()
 	ON_BN_CLICKED(IDOK, &C第八周课堂实验1View::OnBnClickedOk)
+	ON_BN_CLICKED(IDC_BUTTON1, &C第八周课堂实验1View::OnChoose)
+	ON_COMMAND(ID_Diadlg, &C第八周课堂实验1View::OnDiadlg)
 END_MESSAGE_MAP()
 
 // C第八周课堂实验1View 构造/析构
@@ -131,4 +133,33 @@ void C第八周课堂实验1View::OnBnClickedOk()
 	// TODO: 在此添加控件通知处理程序代码
 	set = 1;
 	
+}
+
+
+void C第八周课堂实验1View::OnChoose()
+{
+	TCHAR szFilter[] = _T("ALL File(*.*)|*.*||");	// 构造打开文件对话框   
+	CFileDialog fileDlg(TRUE, _T("txt"), NULL, 0, szFilter, this);
+	// 显示打开文件对话框   
+	if (IDOK == fileDlg.DoModal())
+	{		// 如果点击了文件对话框上的“打开”按钮，则将选择的文件路径显示到编辑框里   		
+		strFilePath = fileDlg.GetPathName();
+		SetDlgItemText(IDC_OPEN_EDIT, strFilePath);
+		s1 = strFilePath;
+		GetDC()->TextOutW(200, 100, s1);
+
+	}
+	// TODO: 在此添加控件通知处理程序代码
+}
+
+
+void C第八周课堂实验1View::OnDiadlg()
+{
+	MyDlg dlg;
+	int r = dlg.DoModal();
+	if (r == IDOK)
+	{
+
+	}
+	// TODO: 在此添加命令处理程序代码
 }
