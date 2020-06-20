@@ -16,6 +16,7 @@ public:
 	C第八周课堂实验1Doc* GetDocument() const;
 	CString s;
 	BOOL set;
+	CString filename;
 // 操作
 public:
 
@@ -44,6 +45,7 @@ protected:
 public:
 	afx_msg void OnLButtonDblClk(UINT nFlags, CPoint point);
 	afx_msg void OnBnClickedOk();
+	afx_msg void OnShowdialog();
 };
 
 #ifndef _DEBUG  // 第八周课堂实验1View.cpp 中的调试版本

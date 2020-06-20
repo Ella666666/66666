@@ -29,6 +29,7 @@ BEGIN_MESSAGE_MAP(C第八周课堂实验1View, CView)
 	ON_COMMAND(ID_FILE_PRINT_PREVIEW, &CView::OnFilePrintPreview)
 	ON_WM_LBUTTONDBLCLK()
 	ON_BN_CLICKED(IDOK, &C第八周课堂实验1View::OnBnClickedOk)
+	ON_COMMAND(ID_SHOWDIALOG, &C第八周课堂实验1View::OnShowdialog)
 END_MESSAGE_MAP()
 
 // C第八周课堂实验1View 构造/析构
@@ -122,6 +123,7 @@ void C第八周课堂实验1View::OnLButtonDblClk(UINT nFlags, CPoint point)
 		s = cfd.GetFileName();
 	}
 	GetDC()->TextOutW(200, 200, s);
+	filename = s;
 	CView::OnLButtonDblClk(nFlags, point);
 }
 
@@ -129,6 +131,21 @@ void C第八周课堂实验1View::OnLButtonDblClk(UINT nFlags, CPoint point)
 void C第八周课堂实验1View::OnBnClickedOk()
 {
 	// TODO: 在此添加控件通知处理程序代码
-	set = 1;
 	
 }
+
+
+void C第八周课堂实验1View::OnShowdialog()
+{
+	MyDlg dlg;
+	int r = dlg.DoModal();
+	if (r == IDOK)
+	{
+	dlg.a = filename;
+	dlg.b = filename;
+	}
+
+	// TODO: 在此添加命令处理程序代码
+}
+
+

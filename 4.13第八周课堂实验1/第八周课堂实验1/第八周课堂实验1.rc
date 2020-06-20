@@ -136,6 +136,7 @@ BEGIN
     BEGIN
         MENUITEM "工具栏(&T)",                     ID_VIEW_TOOLBAR
         MENUITEM "状态栏(&S)",                     ID_VIEW_STATUS_BAR
+        MENUITEM "显示对话框",                       ID_SHOWDIALOG
     END
     POPUP "帮助(&H)"
     BEGIN
@@ -191,6 +192,9 @@ FONT 8, "MS Shell Dlg", 400, 0, 0x1
 BEGIN
     DEFPUSHBUTTON   "确定",IDOK,199,155,50,14
     PUSHBUTTON      "取消",IDCANCEL,253,155,50,14
+    EDITTEXT        IDC_EDIT1,56,35,140,14,ES_AUTOHSCROLL
+    LISTBOX         IDC_LIST1,58,67,162,56,LBS_SORT | LBS_NOINTEGRALHEIGHT | WS_VSCROLL | WS_TABSTOP
+    PUSHBUTTON      "浏览",IDC_BUTTON1,190,142,50,14
 END
 
 
