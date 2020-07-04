@@ -57,13 +57,18 @@ void CUsingLibDllView::OnDraw(CDC* pDC)
 	ASSERT_VALID(pDoc);
 	if (!pDoc)
 		return;
-
-	CString s=CString(pchar());
+	CString s;
+	int n = 5;
+	int a = Factorial(5);
+	CClientDC dc(this);
+	s.Format(_T("%d的阶乘为%d"), n, a);
 	pDC->TextOutW(200, 200, s);
+	//CString s=CString(pchar());
+	//pDC->TextOutW(200, 200, s);
 
-	CString ss;
-	ss.Format(_T("%d,这是从动态库返回的值。"), GetInt());
-	pDC->TextOutW(200, 220, ss);
+	//CString ss;
+	//ss.Format(_T("%d,这是从动态库返回的值。"), GetInt());
+	//pDC->TextOutW(200, 220, ss);
 	// TODO: 在此处为本机数据添加绘制代码
 }
 

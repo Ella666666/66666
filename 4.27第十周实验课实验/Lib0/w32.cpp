@@ -1,8 +1,12 @@
 #include"stdafx.h"
 #include"w32.h"
-char* pchar() {
-	return "从静态库取得的字符串";
-}
-int F1::GetA() {
-	return a + 1;
+int Factorial(int n) {
+	int num = 1;
+	if (n <= 0)  return 0;
+	if (n >= 17) return -1;
+	for (int i = 1; i <= n; i++)
+	{
+		num *= i;
+	}
+	return num;
 }
