@@ -189,8 +189,14 @@
     <Text Include="ReadMe.txt" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="AｄｄＤｌｇ.h" />
+    <ClInclude Include="EnlargeDlg.h" />
+    <ClInclude Include="ErgodicDlg.h" />
     <ClInclude Include="MainFrm.h" />
+    <ClInclude Include="ModDlg.h" />
     <ClInclude Include="Resource.h" />
+    <ClInclude Include="SelectDlg.h" />
+    <ClInclude Include="SortDlg.h" />
     <ClInclude Include="stdafx.h" />
     <ClInclude Include="targetver.h" />
     <ClInclude Include="综合实验五.h" />
@@ -199,7 +205,13 @@
     <ClInclude Include="综合实验五View.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="AｄｄＤｌｇ.cpp" />
+    <ClCompile Include="EnlargeDlg.cpp" />
+    <ClCompile Include="ErgodicDlg.cpp" />
     <ClCompile Include="MainFrm.cpp" />
+    <ClCompile Include="ModDlg.cpp" />
+    <ClCompile Include="SelectDlg.cpp" />
+    <ClCompile Include="SortDlg.cpp" />
     <ClCompile Include="stdafx.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Create</PrecompiledHeader>
@@ -225,4 +237,9 @@
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>
+  <ProjectExtensions>
+    <VisualStudio>
+      <UserProperties RESOURCE_FILE="综合实验五.rc" />
+    </VisualStudio>
+  </ProjectExtensions>
 </Project>
